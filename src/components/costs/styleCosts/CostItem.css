@@ -1,0 +1,43 @@
+.cost-block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: chocolate;
+  color: #f0f8ff;
+}
+.cost-block:last-child {
+  margin-bottom: 0;
+}
+.cost-block button[type=button] {
+  display: inline-block;
+  align-self: flex-end;
+  color: #f0f8ff;
+  background-color: blue;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.cost-block button[type=button]:hover {
+  background-color: rgba(0, 0, 255, 0.6);
+  border-color: blue;
+}
+.cost-block .cost-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: flex-end;
+  font-weight: bold;
+  min-width: 150px;
+}
+.cost-block .cost-item .cost-item__cost {
+  display: inline-block;
+  padding: 3px;
+  background-color: blue;
+  border: 2px aliceblue;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.cost-block .cost-item .cost-item__discript {
+  padding-left: 10px;
+}
