@@ -6,7 +6,7 @@ import React from 'react';
 
 
 function CostItem(props) {
-  let { costItem, setCostItem } = React.useContext(ContextCost);
+  let { setCostItem } = React.useContext(ContextCost);
   //console.log(costItem);
 
 
@@ -15,7 +15,6 @@ function CostItem(props) {
     const month = props.date.toLocaleString('ru-RU', { month: '2-digit' });
     const day = props.date.toLocaleString('ru-RU', { day: '2-digit' });
     let strDate = year + '-' + month + '-' + day;
-
     setCostItem((val) => {
       return {
         ...val,

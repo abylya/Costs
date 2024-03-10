@@ -5,9 +5,8 @@ import { ContextCost } from '../../App';
 import React from 'react';
 function Costs(props) {
   //console.log(props.costs);
-  let { costItem, setCostItem } = React.useContext(ContextCost);
+  let { setCostItem } = React.useContext(ContextCost);
   function addCostHandl() {
-    console.log('click');
     setCostItem((pr) => {
       return {
         ...pr,

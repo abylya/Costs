@@ -16,40 +16,38 @@ let costs = [
 function App() {
 
   let [costArr, setCostArr] = useState(costs);
+  costs = costArr;
   console.log(costs);
   function upCosts(costData) {
     //costs[costData.id] = costData;
-    // let arr = costs;
-    //console.log(costArr);
+    let isPush = true;
     setCostArr((val) => {
       let arr = val.map((obj) => {
         if (costData.id === obj.id) {
           obj = costData;
+          isPush = false;
           //console.log(obj);
         }
         return obj;
       });
-      costs = arr;
+      if (isPush) {
+        let index = arr.length;
+        costData.id = index;
+        arr.push(costData);
+      }
       return arr;
     });
 
   }
   let [costItem, setCostItem] = useState(
     {
-      id: undefined,
-      date: undefined,
+      id: '',
+      date: '',
       discription: '',
-      amount: undefined,
+      amount: '',
       showForm: 'none'
     });
-  /*   setCostItem((val) => {
-      return {
-        ...val,
-        id: 2,
-      }
-    }) */
-  //console.log(costItem);
-  //
+
   return (
     <div>
 
