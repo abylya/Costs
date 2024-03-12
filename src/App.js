@@ -1,7 +1,7 @@
 
-//import React from 'react';
+
 import Costs from './components/costs/Costs';
-//import FormAddCost from './components/forms/FormAddCost';
+import RangeCosts from './components/rangeCosts/RangeCosts';
 import FormRedactCost from './components/forms/FormRedactCost';
 import React, { createContext, useState } from 'react';
 
@@ -17,7 +17,7 @@ function App() {
 
   let [costArr, setCostArr] = useState(costs);
   costs = costArr;
-  console.log(costs);
+  // console.log(costs);
   function upCosts(costData) {
     //costs[costData.id] = costData;
     let isPush = true;
@@ -50,11 +50,10 @@ function App() {
 
   return (
     <div>
-
+      <RangeCosts costs={costArr}></RangeCosts>
       <ContextCost.Provider value={{ costItem, setCostItem }}>
-        <Costs costs={costs} cost={costItem}></Costs>
+        <Costs costs={costArr} cost={costItem}></Costs>
         <FormRedactCost cost={costItem} upCostsHandler={upCosts} ></FormRedactCost>
-
       </ContextCost.Provider>
 
     </div>

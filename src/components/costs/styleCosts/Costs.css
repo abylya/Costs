@@ -1,7 +1,6 @@
 .flex{
   display: flex;
   flex-direction: column;
-  
 }
 .costs{
   padding: 5px;

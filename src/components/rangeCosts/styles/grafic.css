@@ -1,0 +1,36 @@
+.range-wrap {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+ul {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  list-style: none;
+  padding: 10px 10px 20px;
+  background-color: chocolate;
+}
+ul li {
+  flex-grow: 1;
+  display: block;
+  height: 150px;
+  position: relative;
+  min-width: 6px;
+  max-width: 10px;
+  margin: 5px;
+  border: 1px black solid;
+  border-radius: 3px;
+  background-color: aliceblue;
+}
+ul li::after {
+  display: inline-block;
+  position: absolute;
+  content: attr(data-mont);
+  bottom: -20px;
+  left: -8px;
+  z-index: 100;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+}

@@ -1,0 +1,19 @@
+.seleckt-year {
+  color: black;
+  margin-bottom: 2vw;
+}
+.seleckt-year label.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  padding: 5px;
+}
+.seleckt-year .output {
+  display: inline-block;
+  font-weight: bold;
+  background-color: aliceblue;
+}
+.seleckt-year .output input {
+  border: none;
+  width: 80px;
+}
