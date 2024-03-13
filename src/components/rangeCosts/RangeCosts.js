@@ -7,8 +7,8 @@ function RangeCosts(props) {
 
   return (
     <WrapRadius className='range-costs'>
-      <SelecktYear costs={props.costs} />
-      <Grafic />
+      <SelecktYear costs={props.costs} setYear={props.setYear} />
+      <Grafic costs={props.costs} />
     </WrapRadius>
   )
 }

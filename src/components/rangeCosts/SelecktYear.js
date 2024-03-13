@@ -3,11 +3,9 @@ import WrapRadius from "../WrapRadius";
 import './styles/selecktYear.css';
 import { useState } from "react";
 export default function SelecktYear(props) {
-   let [isShow, setIsShow] = useState('hidden');
-   function arrowHandler() {
-      setIsShow((prev) => {
-         return prev === 'hidden' ? 'show' : 'hidden';
-      })
+   function yearHandler(ev) {
+      let year = ev.target.value;
+      props.setYear(year);
    }
    return (
       < div className="seleckt-year">
@@ -15,7 +13,7 @@ export default function SelecktYear(props) {
             Выберите год
          </label>
          <WrapRadius className="output" >
-            <input id="input-year" className="output-year" list="year" onClick={arrowHandler} />
+            <input id="input-year" className="output-year" list="year" onChange={yearHandler} />
          </WrapRadius>
 
          <datalist className="list" id="year">
