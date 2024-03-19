@@ -5,11 +5,14 @@
   padding: 5px;
   background-color: chocolate;
   color: #f0f8ff;
+  border: 3px solid #dddada;
+  border-radius: 10px;
+  box-shadow: 2px 3px 3px #545252;
 }
 .cost-block:last-child {
   margin-bottom: 0;
 }
-.cost-block button[type=button] {
+.cost-block button[type="button"] {
   display: inline-block;
   align-self: flex-end;
   color: #f0f8ff;
@@ -17,7 +20,7 @@
   cursor: pointer;
   transition: all 0.3s;
 }
-.cost-block button[type=button]:hover {
+.cost-block button[type="button"]:hover {
   background-color: rgba(0, 0, 255, 0.6);
   border-color: blue;
 }

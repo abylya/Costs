@@ -4,7 +4,6 @@ import Costs from './components/costs/Costs';
 import RangeCosts from './components/rangeCosts/RangeCosts';
 import FormRedactCost from './components/forms/FormRedactCost';
 import React, { createContext, useState } from 'react';
-import SelecktYear from './components/rangeCosts/SelecktYear';
 
 export const ContextCost = createContext();
 
@@ -17,9 +16,10 @@ let costs = [
 function App() {
   let [selYear, setSelYear] = useState(new Date().getFullYear().toString());
   let [costArr, setCostArr] = useState(costs);
-  costs = costArr;
-  let filterCosts = costs.filter((cost) => cost.date.getFullYear().toString() === selYear)
 
+  // costs = costArr;
+  let filterCosts = costArr.filter((cost) => cost.date.getFullYear().toString() === selYear)
+  //console.log(costs);
   function upCosts(costData) {
     //costs[costData.id] = costData;
     let isPush = true;
@@ -33,8 +33,7 @@ function App() {
         return obj;
       });
       if (isPush) {
-        let index = arr.length;
-        costData.id = index;
+        costData.id = arr.length;
         arr.push(costData);
       }
       return arr;
@@ -50,15 +49,27 @@ function App() {
       showForm: 'none'
     });
 
+  function deleteCost(id) {
+    console.log(id);
+    setCostArr((prev) => {
+      let clon = [...prev]
+      clon.splice(id, 1);
+      for (let i = 0; i < clon.length; i++) {
+        clon[i].id = i;
+      }
 
+      return clon;
+    })
+
+  }
+  //console.log(costArr);
   return (
     <div>
-      <RangeCosts costs={filterCosts} setYear={setSelYear}></RangeCosts>
+      <RangeCosts costs={costArr} setYear={{ selYear, setSelYear }}></RangeCosts>
       <ContextCost.Provider value={{ costItem, setCostItem }}>
-        <Costs costs={filterCosts} cost={costItem}></Costs>
+        <Costs costs={filterCosts} cost={costItem} deleteCost={deleteCost}></Costs>
         <FormRedactCost cost={costItem} upCostsHandler={upCosts} ></FormRedactCost>
       </ContextCost.Provider>
-
     </div>
   );
 }

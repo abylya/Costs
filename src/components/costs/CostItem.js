@@ -6,7 +6,7 @@ import React from 'react';
 
 
 function CostItem(props) {
-  let { setCostItem } = React.useContext(ContextCost);
+  let { costItem, setCostItem } = React.useContext(ContextCost);
   //console.log(costItem);
 
 
@@ -28,11 +28,12 @@ function CostItem(props) {
   }
 
   function delitHandler() {
-
+    let id = props.id;
+    props.deleteCost(id);
   }
 
   return (
-    <WrapRadius className='cost-block'>
+    <li className='cost-block'>
       <CostDate date={props.date} />
 
       <button type='button' className='wrap-radius' onClick={redactHandler}>Редактировать</button>
@@ -42,7 +43,7 @@ function CostItem(props) {
         <WrapRadius className='cost-item__cost'>${props.amount}</WrapRadius>
         <div className='cost-item__discript'>{props.discription}</div>
       </div>
-    </WrapRadius>
+    </li>
   )
 }
 

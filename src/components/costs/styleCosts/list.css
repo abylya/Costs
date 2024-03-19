@@ -1,0 +1,7 @@
+.list-costs {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: aqua;
+}

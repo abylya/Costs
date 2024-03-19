@@ -5,7 +5,7 @@ import { ContextCost } from "../../App";
 
 function FormRedactCost(props) {
   let { costItem, setCostItem } = React.useContext(ContextCost);
-  let submitName = costItem.id ? 'изменить' : 'добавить';
+  let submitName = costItem.id >= 0 ? 'изменить' : 'добавить';
   //console.log(costItem.showForm);
   function closeHandler(ev) {
     //ev.preventDefault();

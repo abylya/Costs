@@ -1,15 +1,9 @@
 .flex{
   display: flex;
   flex-direction: column;
-}
-.costs{
-  padding: 5px;
-  border-radius: 10px;
-  background-color: aqua;
-}
-.costs-backg{
   background-color: blueviolet;
 }
+
 
 .addCost{
   align-self: center;

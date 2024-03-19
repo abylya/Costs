@@ -1,0 +1,28 @@
+li.bar {
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  height: 150px;
+  position: relative;
+  min-width: 6px;
+  max-width: 10px;
+  margin: 5px;
+  border: 1px black solid;
+  border-radius: 3px;
+  background-color: aliceblue;
+}
+li.bar::after {
+  display: inline-block;
+  position: absolute;
+  content: attr(data-month);
+  bottom: -20px;
+  left: -8px;
+  z-index: 100;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+}
+li.bar .level {
+  width: 100%;
+  background-color: blue;
+}
